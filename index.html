@@ -1,447 +1,434 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html>
+  <head>
+    <title>Harrison Went</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Bootstrap Design Template - Pink</title>
-    <!-- BOOTSTRAP CORE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- IONICON STYLE SHEET FOR BEAUTIFUL ICONS -->
-    <link href="assets/css/ionicons.css" rel="stylesheet" />
-    <!-- STYLE FOR OPENING IMAGE IN POPUP USING FANCYBOX-->
-    <link href="assets/js/source/jquery.fancybox.css" rel="stylesheet" />
-    <!-- CUSTOM CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body data-spy="scroll" data-target=".navbar-fixed-top">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+	<link href="color/default.css" rel="stylesheet" media="screen">
+	<script src="js/modernizr.custom.js"></script>
+      </head>
+  <body>
+  	<div class="menu-area">
+  		<div id="dl-menu" class="dl-menuwrapper">
+  			<button class="dl-trigger">Open Menu</button>
+  			<ul class="dl-menu">
+  				<li>
+  					<a href="#intro">Home</a>
+  				</li>
+  				<li><a href="#about">About</a></li>
+  				<li><a href="#services">Personal Projects</a></li>
+  				<li><a href="#works">Snippets</a></li>
+  				<!--
+				<li><a href="#contact">Contact</a></li>
+				<li>
+					<a href="#">Sub Menu</a>
+					<ul class="dl-submenu">
+						<li><a href="#">Sub menu</a></li>
+						<li><a href="#">Sub menu</a></li>
+					</ul>
+				</li>-->
+  			</ul>
+  		</div><!-- /dl-menuwrapper -->
+  	</div>
 
-    <div class="navbar navbar-default navbar-fixed-top scroll-me">
-        <!-- pass scroll-me class above a tags to starts scrolling -->
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png"  alt=""/>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#header">HOME</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                     <li><a href="#clients">CLIENTS</a></li>
-                    <li><a href="#works">WORK</a></li>
-                    <li><a href="#team">TEAM</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
+  	<!-- intro area -->
+  	<div id="intro">
 
-        </div>
-    </div>
-    <!-- NAVBAR END  -->
-    <div id="header">
-        <div class="overlay">
-            <div class="container">
-                <div class="row scroll-me">
-                    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 text-center ">
-
-                        <h1 data-scroll-reveal="enter from the bottom after 0.2s">Time Fadeout,  Design Doesn't
-                        </h1>
-
-                        <h4 data-scroll-reveal="enter from the bottom after 0.4s">Morbi bibendum risus non nunc feugiat, quis venenatis augue fringilla. 
-                          Morbi vestibulum elit eget leo congue elementum.
-                           Aliquam at turpis urna. Nam pulvinar tincidunt posuere. 
-
-                        </h4>
-                        <a data-scroll-reveal="enter from the bottom after 0.6s" href="#" class="btn btn-danger set-bk-clr">Explore Awesomeness</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--HEADER SECTION END  -->
-    <section id="services">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-md-offset-3 pad-bottom" data-scroll-reveal="enter from the bottom after 0.2s">
-                    <h2><strong>OUR SERVICES</strong></h2>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
-
-                </div>
-            </div>
-            <div class="row text-center pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
-                <div class="col-md-3">
-                    <i class="ion-ios-cloud-outline"></i>
-                    <h4><strong>Service Name # 1 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-card"></i>
-                    <h4><strong>Service Name # 2 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-speedometer"></i>
-                    <h4><strong>Service Name # 3 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-ios-settings"></i>
-                    <h4><strong>Service Name # 4 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-            </div>
-            <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.6s">
-                <div class="col-md-3">
-                    <i class="ion-ios-chatboxes-outline"></i>
-                    <h4><strong>Service Name # 5 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-ios-pulse-strong"></i>
-                    <h4><strong>Service Name # 6 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-ios-browsers-outline"></i>
-                    <h4><strong>Service Name # 7 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-                <div class="col-md-3">
-                    <i class="ion-ios-people-outline"></i>
-                    <h4><strong>Service Name # 8 </strong></h4>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                </div>
-            </div>
-        </div>
+  		<div class="intro-text">
+  			<div class="container">
+  				<div class="row">
 
 
-    </section>
-    <!-- SERVICES SECTION END  -->
-    <div id="clients">
-        <div class="overlay">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-12" data-scroll-reveal="enter from the bottom after 0.2s">
-                        <div class="carousel slide clients-carousel" id="clients-slider">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/themeforest.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/facebook.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/google.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/graphic.png" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/themeforest.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/facebook.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/google.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/graphic.png" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/themeforest.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/facebook.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/google.png" alt="" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="thumbnail" href="#">
-                                                <img src="assets/img/graphic.png" alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a data-slide="prev" href="#clients-slider" class="left carousel-control">‹</a>
-                            <a data-slide="next" href="#clients-slider" class="right carousel-control">›</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- CLIENTS SECTION END  -->
-    <section id="works">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-md-offset-3 pad-bottom" data-scroll-reveal="enter from the bottom after 0.2s">
-                    <h2><strong>WORK PORFOLIO</strong></h2>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
+  					<div class="col-md-12">
 
-                </div>
-            </div>
+  						<div class="brand">
+  							<h1><a href="index.html">Harrison Went</a></h1>
+  							<div class="line-spacer"></div>
+  							<p><span>Games Programming student<br>University Of Suffolk</span></p>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
 
-            <div class="row text-center">
-                <div class="col-md-12 pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
-                    <div class="caegories">
-                        <a href="#" data-filter="*" class="active btn btn-info btn-sm">All</a>
-                        <a href="#" data-filter=".html" class="btn btn-info btn-sm">HTML</a>
-                        <a href="#" data-filter=".css" class="btn btn-info btn-sm">CSS</a>
-                        <a href="#" data-filter=".code" class="btn btn-info btn-sm">CODE</a>
-                        <a href="#" data-filter=".script" class="btn btn-info btn-sm">SCRIPT</a>
-                    </div>
+  	</div>
 
-                </div>
-            </div>
+  	<!-- spacer -->
+  	<section id="spacer1" class="home-section spacer">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<div class="color-light">
+  						<h2 class="wow bounceInDown" data-wow-delay="1s">About Me</h2>
+  						<p class="lead wow bounceInUp" data-wow-delay="2s">Final year student at the University Of Suffolk</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
 
 
-            <div class="row text-center" id="portfolio-div" >
-
-                <div class="col-md-4 col-sm-4 html">
-                    <div class="work-wrapper">
-
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/1.jpg">
-
-                            <img src="assets/img/portfolio/1.jpg" class="img-responsive " alt="" />
-                        </a>
-
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 css">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/2.jpg">
-
-                            <img src="assets/img/portfolio/2.jpg" class="img-responsive " alt="" />
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 code">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/3.jpg">
-
-                            <img src="assets/img/portfolio/3.jpg" class="img-responsive " alt="" />
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 script">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/4.jpg">
-
-                            <img src="assets/img/portfolio/4.jpg" class="img-responsive " alt="" />
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 html script">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/5.jpg">
-
-                            <img src="assets/img/portfolio/5.jpg" class="img-responsive " alt="" />
-                        </a>
-
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 css code">
-                    <div class="work-wrapper">
-                        <a class="fancybox-media" title="Image Title Goes Here" href="assets/img/portfolio/6.jpg">
-
-                            <img src="assets/img/portfolio/6.jpg" class="img-responsive" alt="" />
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- WORK SECTION END  -->
-    <div id="testimonial" data-scroll-reveal="enter from the bottom after 0.2s">
-        <div class="overlay">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-                        <i class="ion-ios-drag clr-set f-big"></i>
-                        <br />
-                        <p>
-                            Consectetur adipiscing elit felis dolor felis dolor vitae.
-                     Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae felis dolor vitae
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- TESTIMONIAL SECTION END  -->
-    <section id="team">
-        <div class="container">
-
-            <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.2s">
-                <div class="col-md-6 col-md-offset-3 pad-bottom">
-                    <h2><strong>AWESOME TEAM</strong></h2>
-                    Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
-
-                </div>
-            </div>
-            <div class="row pad-bottom" data-scroll-reveal="enter from the bottom after 0.4s">
-
-                <div class="col-md-6 col-sm-6">
-                    <div class="media">
-                        <a class="media-left" href="#">
-                            <img src="assets/img/1.jpg" alt="" class="img-circle" />
-                        </a>
-                        <div class="media-body">
-                            <h3 class="media-heading">Technical Director</h3>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-           3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="media">
-                        <a class="media-left" href="#">
-                            <img src="assets/img/2.jpg" alt="" class="img-circle" />
-                        </a>
-                        <div class="media-body">
-                            <h3 class="media-heading">Marketing Director</h3>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-           3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" data-scroll-reveal="enter from the bottom after 0.6s">
-
-                <div class="col-md-6 col-sm-6">
-                    <div class="media">
-                        <a class="media-left" href="#">
-                            <img src="assets/img/3.jpg" alt="" class="img-circle" />
-                        </a>
-                        <div class="media-body">
-                            <h3 class="media-heading">Clients Manager</h3>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-           3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="media">
-                        <a class="media-left" href="#">
-                            <img src="assets/img/4.jpg" alt="" class="img-circle" />
-                        </a>
-                        <div class="media-body">
-                            <h3 class="media-heading">Support Director</h3>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-           3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- TEAM SECTION END -->
-    <section id="contact">
-        <div class="overlay">
-            <div class="container">
-                <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.2s">
-                    <div class="col-md-6 col-md-offset-3 pad-bottom">
-                        <h2><strong>STAY CONNECTED </strong></h2>
-                        Consectetur adipiscing elit felis dolor felis dolor vitae.Eelit felis dolor vitae
-
-                    </div>
-                </div>
-
-                <div class="row text-center" data-scroll-reveal="enter from the bottom after 0.4s">
-
-                    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                        <h3><strong>Address : </strong></h3>
-                        <br />
-                        <h4>102, Melborne City International,</h4>
-                        <h4>United States </h4>
-                        <h4><strong>Email : </strong>info@yourdomain.com</h4>
-                    </div>
-
-                </div>
+  	<!-- About -->
+  	<section id="about" class="home-section bg-white">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-offset-2 col-md-8">
+  					<div class="section-heading">
+  						<h2>Programming Experience</h2>
+  						<p>We’ve been building unique digital products, platforms, and experiences for the past 6 years.</p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+  					<div class="box-team wow bounceInDown" data-wow-delay="0.1s">
+  						<img src="img/team/1.jpg" alt="" class="img-responsive" />
+  						<h4>C#</h4>
+  						<p>Advanced with using C# with the Unity Game Engine</p>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.3s">
+  					<div class="box-team wow bounceInDown">
+  						<img src="img/team/2.jpg" alt="" class="img-responsive" />
+  						<h4>C++</h4>
+  						<p>Intermediate skill with C++</p>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.5s">
+  					<div class="box-team wow bounceInDown">
+  						<img src="img/team/3.jpg" alt="" class="img-responsive" />
+  						<h4>Python</h4>
+  						<p>Intermediate skill with Python</p>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.7s">
+  					<div class="box-team wow bounceInDown">
+  						<img src="img/team/4.jpg" alt="" class="img-responsive" />
+  						<h4>Software</h4>
+                        <p>Experienced with Unity, GitHub, Blender, SteamWorks, MS Office and visual Studio</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
 
 
 
-            </div>
-        </div>
-    </section>
-    <!-- CONTACT SECTION END -->
-    <footer>
-        &copy 2015 YourDomain.com  | <a href="http://www.designbootstrap.com/" target="_blank">by DesignBootstrap</a>
-    </footer>
-    <!--FOOTER SECTION END  -->
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  SCRIPTS -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/js/bootstrap.js"></script>
-    <!-- SCROLLING SCRIPTS PLUGIN  -->
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <!--  FANCYBOX PLUGIN -->
-    <script src="assets/js/source/jquery.fancybox.js"></script>
-    <!-- ISOTOPE SCRIPTS -->
-    <script src="assets/js/jquery.isotope.js"></script>
-     <!-- SCROLL ANIMATIONS  -->
-    <script src="assets/js/scrollReveal.js"></script>
-    <!-- CUSTOM SCRIPTS   -->
-    <script src="assets/js/custom.js"></script>
+  	<!-- Services -->
+  	<section id="services" class="home-section bg-white">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-offset-2 col-md-8">
+  					<div class="section-heading">
+  						<h2>Personal Projects</h2>
+  						<p>Est te congue scaevola comprehensam. No pri simul decore, in partem electram voluptatibus vel esse facer.</p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+  					<div class="service-box wow bounceInDown" data-wow-delay="0.1s">
+  						<i class="fa fa-code fa-4x"></i>
+  						<h4>Galactic Disharmony</h4>
+  						<p>A turn based Strategy game with FPS battles</p>
+  						<a class="btn btn-primary">Learn more</a>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.3s">
+  					<div class="service-box wow bounceInDown" data-wow-delay="0.1s">
+  						<i class="fa fa-cog fa-4x"></i>
+  						<h4>Skimmerz</h4>
+  						<p>A 3rd person arena shooter with sci-fi tanks</p>
+  						<a class="btn btn-primary">Learn more</a>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.5s">
+  					<div class="service-box wow bounceInDown" data-wow-delay="0.1s">
+  						<i class="fa fa-desktop fa-4x"></i>
+  						<h4>Duplipoint</h4>
+  						<p>A puzzle mobile game</p>
+  						<a class="btn btn-primary">Learn more</a>
+  					</div>
+  				</div>
+  				<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.7s">
+  					<div class="service-box wow bounceInDown" data-wow-delay="0.1s">
+  						<i class="fa fa-dropbox fa-4x"></i>
+  						<h4>Leap Rider</h4>
+  						<p>A space invader style game made for the Leap Motion controller</p>
+  						<a class="btn btn-primary">Learn more</a>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
 
-</body>
+  	<!-- Works -->
+  	<section id="works" class="home-section bg-gray">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-offset-2 col-md-8">
+  					<div class="section-heading">
+  						<h2>Programming snippets</h2>
+  						<p>Dicunt tamquam dissentiet vix ex, ne mei dico reformidans, accumsan gloriatur necessitatibus eu sit.</p>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-md-offset-2 col-md-8">
+
+  					<ul class="lb-album">
+  						<li>
+  							<a href="#image-1">
+  								<img src="img/works/thumbs/1.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-1">
+  								<a href="#page" class="lb-close">X</a>
+  								<img src="img/works/1.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>OpenGL 3D renderer (C++)</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-2">
+  								<img src="img/works/thumbs/2.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-2">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/2.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Video game AI (C# Unity)</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-3">
+  								<img src="img/works/thumbs/3.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-3">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/3.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>HLSL Shaders</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-4">
+  								<img src="img/works/thumbs/4.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-4">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/4.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
+  								</div>
+
+  							</div>
+  						</li>
+
+  						<li>
+  							<a href="#image-5">
+  								<img src="img/works/thumbs/5.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-5">
+  								<a href="#page" class="lb-close">X</a>
+  								<img src="img/works/5.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-6">
+  								<img src="img/works/thumbs/6.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-6">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/6.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-7">
+  								<img src="img/works/thumbs/7.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-7">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/7.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
+  								</div>
+
+  							</div>
+  						</li>
+  						<li>
+  							<a href="#image-8">
+  								<img src="img/works/thumbs/8.jpg" alt="">
+  								<span>+</span>
+  							</a>
+  							<div class="lb-overlay" id="image-8">
+  								<a href="#page" class="lb-close">x Close</a>
+  								<img src="img/works/8.jpg" alt="" />
+  								<div>
+  									<h3>Sleek <span>/Design/</h3>
+  									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
+  								</div>
+
+  							</div>
+  						</li>
+  					</ul>
+
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<!-- spacer 2 -->
+  	<section id="spacer2" class="home-section spacer">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<div class="color-light">
+  						<h2 class="wow bounceInDown" data-wow-delay="1s">Contact</h2>
+  						<p class="lead wow bounceInUp" data-wow-delay="2s">Email: harrisonwgame@gmail.com <br>Twitter: @wentharrison</p>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<!-- Contact -->
+  	<!--<section id="contact" class="home-section bg-white">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-offset-2 col-md-8">
+  					<div class="section-heading">
+  						<h2>Contact us</h2>
+  						<p>Contact via form below and we will be get in touch with you within 24 hours. </p>
+  					</div>
+  				</div>
+  			</div>
+
+  			<div class="row">
+  				<div class="col-md-offset-1 col-md-10">
+
+  					<form class="form-horizontal" role="form">
+  						<div class="form-group">
+  							<div class="col-md-offset-2 col-md-8">
+  								<input type="text" class="form-control" id="inputName" placeholder="Name">
+  							</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-md-offset-2 col-md-8">
+  								<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+  							</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-md-offset-2 col-md-8">
+  								<input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+  							</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-md-offset-2 col-md-8">
+  								<textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
+  							</div>
+  						</div>
+  						<div class="form-group">
+  							<div class="col-md-offset-2 col-md-8">
+  								<button type="button" class="btn btn-theme btn-lg btn-block">Send message</button>
+  							</div>
+  						</div>
+  					</form>
+
+  				</div>
+
+
+  			</div>
+  			<div class="row mar-top30 ">
+  				<div class="col-md-offset-2 col-md-8">
+  					<h5>We're on social networks</h5>
+  					<ul class="social-network">
+  						<li>
+  							<a href="#">
+  								<span class="fa-stack fa-2x">
+  									<i class="fa fa-circle fa-stack-2x"></i>
+  									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+  								</span>
+  							</a>
+  						</li>
+  						<li>
+  							<a href="#">
+  								<span class="fa-stack fa-2x">
+  									<i class="fa fa-circle fa-stack-2x"></i>
+  									<i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+  								</span>
+  							</a>
+  						</li>
+  						<li>
+  							<a href="#">
+  								<span class="fa-stack fa-2x">
+  									<i class="fa fa-circle fa-stack-2x"></i>
+  									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+  								</span>
+  							</a>
+  						</li>
+  						<li>
+  							<a href="#">
+  								<span class="fa-stack fa-2x">
+  									<i class="fa fa-circle fa-stack-2x"></i>
+  									<i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+  								</span>
+  							</a>
+  						</li>
+  					</ul>
+  				</div>
+  			</div>
+
+  		</div>
+  	</section>-->
+
+  	<footer>
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-md-12">
+  					<p>Copyright &copy;2014 Mamba company. All rights reserved. By <a href="http://bootstraptaste.com">Bootstraptaste</a></p>
+                    <p>Free Wordpress Themes by <a href="http://www.themezy.com">Themezy</a></p>
+  				</div>
+  			</div>
+  		</div>
+  	</footer>
+
+  	<!-- js -->
+  	<script src="js/jquery.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+  	<script src="js/jquery.smooth-scroll.min.js"></script>
+  	<script src="js/jquery.dlmenu.js"></script>
+  	<script src="js/wow.min.js"></script>
+  	<script src="js/custom.js"></script>
+
 </html>
