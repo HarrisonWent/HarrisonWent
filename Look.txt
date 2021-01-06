@@ -1,0 +1,170 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/*
+This script is used for rotating the players camera using mouse input,
+
+It also takes in values for adding recoil to the camera,
+
+The recoil will smoothly rotate the camera and return to the original position once it has stopped recoiling
+
+Tf the player adjusts for recoil by bringing the mouse down, they will affect the recoil pattern first,
+as to not move where they are trying to aim at unintentionally
+*/
+
+public class Look : MonoBehaviour
+{
+    public ObjectReferences MyReferences;
+    public Transform ParentTransform; //Left and right, recoil stuff
+    public float MaxX = -95.00f, MinX = 95.00f;
+
+    public Animator CameraAnimator;
+
+    public Transform RecoilTransform;
+    private static Vector2 RecoilTarget = Vector2.zero, CurrentValue = Vector2.zero;
+
+    public enum LookMode
+    {
+        Guided,
+        Free
+    }
+    public LookMode LookSetting = LookMode.Guided;
+
+    private float RecoilReductionSpeed =5, RecoilAccelerationSpeed = 15;//was 1.3
+    static float TimeForReturn = 0.25f, TimeSinceCounter = 0f;
+    static float recoilScale = 0.15f;
+
+    public static void SetReturnTime(float returnTime)
+    {
+        TimeForReturn = returnTime;
+    }
+    public static void AddRecoil(float UpDown, float LeftRight)
+    {
+        TimeSinceCounter = 0f;
+        RecoilTarget.y += (LeftRight* recoilScale);//y goes left right on rotate
+        RecoilTarget.x += (UpDown* recoilScale);//x goes up down on rotate
+    }
+
+    private float currentADSMultiplier = 1f;
+    public void SetAimMultiplier(float newMultiplier)
+    {
+        currentADSMultiplier = newMultiplier;
+    }
+
+    void Start()
+    {
+        TimeSinceCounter = 0;
+        RecoilTarget = Vector2.zero;
+
+        globalcontrols = GameObject.Find("GlobalControls").GetComponent<GlobalControls>();
+    }
+    private GlobalControls globalcontrols;
+
+    void Update()
+    {
+        if(Time.timeScale == 0) { return; }
+
+        //Counts when to start bringing the recoil back down after firing, time for return is normally set to the fire rate of the current weapon, via SetReturnTime
+        if (TimeSinceCounter < TimeForReturn)
+        {
+            TimeSinceCounter += Time.deltaTime;
+        }
+
+        CurrentValue = new Vector3(
+            Mathf.Lerp(CurrentValue.x,RecoilTarget.x,RecoilAccelerationSpeed * Time.deltaTime),//up down
+            Mathf.Lerp(CurrentValue.y, RecoilTarget.y, RecoilAccelerationSpeed * Time.deltaTime),//left right
+            0);
+
+        //Update the rotation of the recoil transform, a child of the look transform, parent of the camera itself
+        RecoilTransform.localEulerAngles = new Vector3(CurrentValue.x, CurrentValue.y, 0);
+
+        //Bring recoil back down to original position
+        if (TimeSinceCounter >= TimeForReturn)
+        {
+            RecoilTarget = new Vector3(
+                Mathf.Lerp(RecoilTarget.x, 0, RecoilReductionSpeed * Time.deltaTime),//up down
+                Mathf.Lerp(RecoilTarget.y, 0, RecoilReductionSpeed * Time.deltaTime),//left right
+                0);
+        }
+
+        //Mouse look
+        float CurrentLookSpeed = GlobalSettings.MouseSensitvity * GlobalSettings.MouseMultiplier;
+
+        //Is aiming down sights?
+        if (globalcontrols.GetAim())
+        {
+            CurrentLookSpeed = GlobalSettings.MouseSensitvityAimed* GlobalSettings.MouseMultiplier;
+        }
+
+        float xLook = (Input.GetAxisRaw("Mouse X")* CurrentLookSpeed);
+        float yLook = (Input.GetAxisRaw("Mouse Y") * CurrentLookSpeed);
+
+        if (MyReferences.MySelectWeapon.CurrentlySelected != null)
+        {
+            if (MyReferences.MySelectWeapon.CurrentlySelected.GetComonent_Input().isAiming)
+            {                
+                xLook = xLook * 0.5f * currentADSMultiplier;
+                yLook = yLook * 0.5f * currentADSMultiplier;
+
+                //Update sway, is aiming
+                ApplySway(true);
+            }
+            else
+            {
+                //Change weapon sway if not aiming down sight
+                moveX(xLook * Time.deltaTime);
+                moveY(yLook * Time.deltaTime);
+
+                //Update sway, not aiming
+                ApplySway(false);
+            }            
+        }
+
+        //up down
+        if (RecoilTarget.x<-0.05f && (-yLook)>0f)
+        {
+            //Debug.Log("Went to reduce recoil. Recoil target value: " + RecoilTarget.x + ". Y look: " + yLook);
+            RecoilTarget.x -= yLook;
+        }
+        else
+        {
+            //Debug.Log("Went to mouse look. Current Recoil value: " + CurrentValue.x + ". Y look: " + yLook);
+            transform.localEulerAngles = new Vector3
+                (Mathf.Clamp(AngleFixer.WrapAngle(transform.localEulerAngles.x - yLook), MinX, MaxX),
+                0,
+                0);
+        }
+
+        //left right
+        ParentTransform.eulerAngles = new Vector3(0, ParentTransform.eulerAngles.y + xLook, 0);
+    }
+
+    float MoveToSpeed = 8, MoveBackSpeed = 3f;
+
+    float XTarget = 0f, CurrentX = 0f;
+    float YTarget = 0f, CurrentY = 0f;
+    void moveX(float Amount)
+    {
+        XTarget = Mathf.Clamp(XTarget + Amount,-1f,1f);
+    }
+    void moveY(float Amount)
+    {
+        YTarget = Mathf.Clamp(YTarget + Amount, -1f, 1f);
+    }
+
+    void ApplySway(bool aiming)
+    {
+        float applyMoveBack = MoveBackSpeed;
+        if (aiming) { XTarget = 0f; YTarget = 0f; }
+        
+        CurrentX = Mathf.Lerp(CurrentX, XTarget, MoveToSpeed * Time.deltaTime);
+        CurrentY = Mathf.Lerp(CurrentY, YTarget, MoveToSpeed * Time.deltaTime);
+
+        CameraAnimator.SetFloat("Horizontal",CurrentX);
+        CameraAnimator.SetFloat("Vertical",CurrentY);
+
+        XTarget = Mathf.Lerp(XTarget, 0f, applyMoveBack * Time.deltaTime);
+        YTarget = Mathf.Lerp(YTarget, 0f, applyMoveBack * Time.deltaTime);
+    }
+}

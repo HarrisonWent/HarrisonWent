@@ -1,0 +1,209 @@
+﻿//HARRISON WENT 2021
+
+using UnityEngine;
+using UnityEngine.AI;
+
+public class AIHuman : AIRoot
+{
+    //Movement
+    private int AreaMask;
+    private bool Sprint = false;
+
+    //General
+    public ObjectReferences myReferences;
+    private bool SpawnedStates = false;
+    [HideInInspector] public State_Human_Objective state_Objective;
+    [HideInInspector] public State_Human_Combat state_Combat;
+    [HideInInspector] public State_HumanFindAmmo state_GetAmmo;
+    [HideInInspector] public State_HumanRunAway state_RunAway;
+    public AIState CurrentState;
+
+    //*****INITILISATION*****
+    private void Start()
+    {
+        AreaMask = 1 << NavMesh.GetAreaFromName("Walkable");
+    }
+
+    void SpawnStates()
+    {
+        state_Objective = gameObject.AddComponent<State_Human_Objective>();
+        state_Objective.MyHumanAI = this;
+        state_Combat = gameObject.AddComponent<State_Human_Combat>();
+        state_Combat.MyHumanAI = this;
+        state_GetAmmo = gameObject.AddComponent<State_HumanFindAmmo>();
+        state_GetAmmo.MyHumanAI = this;
+        state_RunAway = gameObject.AddComponent<State_HumanRunAway>();
+        state_RunAway.MyHumanAI = this;
+        SpawnedStates = true;
+    }
+
+    //*****DECISIONS*****
+    public void EnableAI()
+    {
+        //Initialize states and add to AI pool
+        if (!SpawnedStates)
+        {
+            SpawnStates();
+            AiList.AddBot(this);
+        }
+        CurrentState = state_Objective;
+        enabled = true;        
+    }
+
+    public void DisableAI()
+    {
+        CurrentState = null;
+        enabled = false;
+    }
+
+    public override void Query()
+    {
+        //Check the current state, returns the next state to execute
+        if (CurrentState)
+        {            
+            CurrentState = CurrentState.CheckState();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        MoveAgent();
+    }
+
+    //*****MOVEMENT*****
+    private void SetToSprintSpeed()
+    {
+        myReferences.MyCrouchProne.StandUp();
+        Sprint = true;
+    }
+
+    private void SetToWalkSpeed()
+    {
+        myReferences.MyCrouchProne.StandUp();
+        Sprint = false;
+    }
+
+    public void StandStill()
+    {
+        myReferences.MyAgent.ResetPath();
+        Sprint = false;
+    }
+
+    //Call to start moving to given destination, returns false if fails to get path
+    public bool Wander(float RandomDistance,Vector3 Destination,bool run)
+    {
+        //Make sure not a duplicate request
+        if (myReferences.MyAgent.hasPath)
+        {
+            if (Vector3.Distance(Destination, myReferences.MyAgent.destination) < 5f) { return true; }
+        }
+
+        Vector3 randpos = RandomNavSphere(Destination, RandomDistance);
+
+        NavMeshPath NMP = new NavMeshPath();
+        NavMesh.CalculatePath(myReferences.MyAgent.nextPosition, randpos, AreaMask, NMP);
+
+        //if fail try half way
+        if (NMP.status == NavMeshPathStatus.PathInvalid) 
+        {
+            Vector3 Halfway = RandomNavSphere((myReferences.GetEyeTransform().position + randpos) * 0.5f, RandomDistance);
+            NavMesh.CalculatePath(myReferences.MyAgent.nextPosition, Halfway, AreaMask, NMP);
+
+            if(NMP.status == NavMeshPathStatus.PathInvalid) { NavMesh.CalculatePath(myReferences.MyAgent.nextPosition, Destination, AreaMask, NMP); }
+            if(NMP.status == NavMeshPathStatus.PathInvalid) { return false; }
+        }
+         
+        myReferences.MyAgent.SetPath(NMP);
+        
+        if (run)
+        {
+            SetToSprintSpeed();
+        }
+        else
+        {
+            SetToWalkSpeed();
+        }
+        return true;
+    }
+
+    //Returns a random position on the nav mesh from the origin
+    private Vector3 RandomNavSphere(Vector3 origin, float distance)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * distance;
+
+        randomDirection += origin;
+
+        if(NavMesh.SamplePosition(randomDirection, out NavMeshHit navHit, 500, AreaMask))
+        {
+            return navHit.position;
+        }
+        else
+        {
+            return randomDirection;
+        }        
+    }
+
+    //Values used to detect when to jump
+    int LastX = 0, LastZ = 0;
+    float PositionCheckRate = 3f, PositionCheckTimer = 0f;
+
+    private void MoveAgent()
+    {
+        //Moving
+        Vector3 DesiredMove = Vector3.zero;
+        if (myReferences.MyAgent.hasPath)
+        {
+            myReferences.MyAgent.nextPosition = myReferences.GetParentTransform().position;
+
+            Vector3 DesiredPosition = myReferences.GetParentTransform().position + (myReferences.MyAgent.desiredVelocity * 2);
+            Vector3 targetDir = DesiredPosition - myReferences.GetEyeTransform().position;
+
+            DesiredMove = myReferences.GetParentTransform().InverseTransformDirection(targetDir);
+
+            //Disable moving up down, jump does this
+            DesiredMove.y = 0;
+            //Disables wlaking left/right
+            DesiredMove.x = 0;
+        }
+
+        //Jumping
+        bool jump = false;
+        if (DesiredMove.magnitude > 0f && myReferences.MyHumanMove.Up.y < 1)
+        {
+            Vector3 CurPos = myReferences.GetParentTransform().position;
+
+            int CurrentX = Mathf.RoundToInt(CurPos.x);
+            int CurrentZ = Mathf.RoundToInt(CurPos.z);            
+
+            if (PositionCheckTimer >= PositionCheckRate)
+            {
+                if (LastX == CurrentX && LastZ == CurrentZ)
+                {
+                    jump = true;
+                }
+
+                LastX = CurrentX;
+                LastZ = CurrentZ;
+                PositionCheckTimer = 0f;
+            }
+            else
+            {
+                PositionCheckTimer += Time.fixedDeltaTime;
+            }
+        }
+
+        //Send the move to movement script
+        myReferences.MyHumanMove.Move(DesiredMove, Sprint, jump);
+    }
+
+    //*****Shooting*****
+
+    private void Update()
+    {
+        if (Time.timeScale == 0f || !FPS_PlayManager.PlayMode || !CurrentState) { return; }
+
+        //Fire gun at target
+        try { state_Combat.ShootTheEnemy(); }
+        catch { Debug.LogWarning("No combat state!"); }        
+    }
+}
