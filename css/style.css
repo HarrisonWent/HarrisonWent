@@ -168,11 +168,17 @@ Home sections
 Spacer
 ============================= */
 
-#spacer1{	
-	background-image: url(../img/spacer/1.jpg);
+#spacer1 {
+	background-image: url(../img/spacer/1.gif);
+	background-repeat: no-repeat;
+	/*background-size: 40% 100%;*/
+	background-position: center;
 }
 #spacer2{	
 	background-image: url(../img/spacer/2.jpg);
+}
+#spacer3 {
+	background-image: url(../img/Disharmony/Header.jpg);
 }
 
 
