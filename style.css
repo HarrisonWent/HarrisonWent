@@ -88,16 +88,12 @@ footer {
 	height: 10vmin;
 }
 
-
-
-
-
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 10%; /* Location of the box */
+	padding-top: 2%; /* Location of the box */
 	left: 0;
 	top: 0;
 
@@ -110,12 +106,13 @@ footer {
 
 /* Modal Content */
 .modal-content {
-	background-color: #fefefe;
+	background-color: #FeFeFe;
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
 	max-width: 900px;
 	width: 80%;
+
 }
 
 /* The Close Button */
@@ -126,9 +123,24 @@ footer {
 	font-weight: bold;
 }
 
-	.close:hover,
-	.close:focus {
-		color: #000;
-		text-decoration: none;
-		cursor: pointer;
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+	.button:hover {
+		background-color: #2c682f;
 	}
