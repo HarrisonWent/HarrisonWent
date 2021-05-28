@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1.0, user-scalable=yes" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>
+		Harrison Went Portfolio
+	</title>
+	<script>
+
+		if (navigator.userAgent.indexOf("Trident") != -1) {
+			document.write("<link rel='stylesheet' type='text/css' href='style.css'>");
+		}
+		if (navigator.userAgent.indexOf("Chrome") != -1) {
+			document.write("<link rel='stylesheet' type='text/css' href='style.css'>");
+		}
+
+	</script>
+</head>
+
+<body>
+	<div class="gap" style="height: 5vmin;"></div>
+
+	<div class="container">
+		<img src="Images/1.gif" alt="Norway" style="width:100%;">
+		<div class="text-block">
+			<h4>Harrison Went</h4>
+			<p>Final year student, BSc with Honours in Games Programming <br /> University of Suffolk (Ipswich Hub)</p>
+		</div>
+	</div>
+
+	<div class="gap"></div>
+
+	<div class="bio">
+		<div class="bioItem" >
+			<img src="Images/Me.jpg" alt="Profile picture" style="width:100%;" >
+		</div>
+		<div class="bioItem" style="width:50vmin;">
+			<p  >This is my bio hello there. This is my bio hello there.This is my bio hello there.This is my bio hello there.</p>
+		</div>
+	</div>
+
+	<div class="gap"></div>
+
+	<h3>Programming experience</h3>
+	<p style="text-align:center;">
+		At university i have gained experience with developing with the C#, C++ and Python programming languages.
+	<p>
+
+	<div class="row">
+		<div class="block">
+			<h1>Puzzle Box (2021)</h1>
+			<img src="Images/SquigglyThumbnail.jpg" alt="PuzzleBox" style="width:100%;">
+			<h2>.</h2>
+			<button class ="button" id="myBtn_">View info</button>
+		</div>
+		<div class="block">
+			<h1>Escape-O-Naught (2021)</h1>
+			<img src="Images/EscapeONaughtThumb.png" alt="Escape-O-Naught" style="width:100%;">
+			<h2>Escape-O-Naught is a short and easy 3D puzzle platformer. Created as part of my course at University.</h2>
+			<button class ="button" id="myBtn_Naught">View info</button>
+		</div>
+		<div class="block">
+			<h1>Galactic Disharmony (2020)</h1>
+			<img src="Images/DisharmonyThumbnail.jpg" alt="Galactic Disharmony" style="width:100%;">
+			<h2>Turn based Strategy game with First person shooter battles. Made in Unity 2020 with C#.</h2>
+			<button class ="button" id="myBtn_Disharmony">View info</button>
+		</div>
+		<div class="block">
+			<h1>Duplipoint (2019)</h1>
+			<img src="Images/DuplipointThumbnail.jpg" alt="Duplipoint" style="width:100%;">
+			<h2>A matching puzzle mobile game for android. Made with Unity 2019.</h2>
+			<button class ="button" id="myBtn_Duplipoint">View info</button>
+		</div>
+		<div class="block">
+			<h1>SKIMMERZ (2017)</h1>
+			<img src="Images/SkimmerzThumbnail.jpg" alt="Skimmerz" style="width:100%;">
+			<h2>A 3rd person arena shooter with sci-fi tanks. My first game and made with Unity 5.</h2>
+			<button class ="button" id="myBtn_Skimmerz">View info</button>
+		</div>
+	</div>
+
+	<div class="gap"></div>
+
+	<div class="container">
+	  <div class="mySlides">
+		<div class="numbertext">1 / 6</div>
+		<img src="img_woods_wide.jpg" style="width:100%">
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">2 / 6</div>
+		<img src="img_5terre_wide.jpg" style="width:100%">
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">3 / 6</div>
+		<img src="img_mountains_wide.jpg" style="width:100%">
+	  </div>
+    
+	  <div class="mySlides">
+		<div class="numbertext">4 / 6</div>
+		<img src="img_lights_wide.jpg" style="width:100%">
+	  </div>
+
+	  <div class="mySlides">
+		<div class="numbertext">5 / 6</div>
+		<img src="img_nature_wide.jpg" style="width:100%">
+	  </div>
+    
+	  <div class="mySlides">
+		<div class="numbertext">6 / 6</div>
+		<img src="img_snow_wide.jpg" style="width:100%">
+	  </div>
+    
+	  <a class="prev" onclick="plusSlides(-1)">❮</a>
+	  <a class="next" onclick="plusSlides(1)">❯</a>
+
+	  <div class="caption-container">
+		<p id="caption"></p>
+	  </div>
+
+	  <div class="row">
+		<div class="column">
+		  <img class="demo cursor" src="img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+		</div>
+		<div class="column">
+		  <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+		</div>    
+		<div class="column">
+		  <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+		</div>
+	  </div>
+	</div>
+
+	<h3>Contact me:</h3>
+	<p style="text-align:center;">
+		<a href="https://twitter.com/wentharrison">Twitter: @wentharrison, </a>
+		<br /><a href="https://github.com/HarrisonWent">My Github, </a>
+		<br /><a href="https://www.linkedin.com/in/harrison-went-857b311b8/">LinkedIn, </a>
+		<br /><a href="https://www.youtube.com/c/HarrisonWentA10/videos">YouTube, </a>
+		<br />public Email: harrisonwgame@gmail.com
+	<p>
+
+	<div class="gap"></div>
+
+		<!-- Trigger/Open The Modal -->
+		<!-- The Modal -->
+	<div id="Modal_GalacticDisharmony" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h3>Galactic Disharmony (2020)</h3>
+			<a href="https://harrisonwent.itch.io/galactic-disharmony"><button class ="button" style="margin-left:37.5%; width:25%; height:25%;">View Itch.IO store page</button></a>
+			<p>Galactic Disharmony is a personal project I worked on in my spare time, designing and implementing all of the programming for the games features.</p>
+			<p>The gameplay focuses on a turn based solar system map where the player constructs their armies and fights for control of planets of which the battles are played out in a first-person shooter experience with their units.</p>
+			<iframe width="100%" height="320px" src="https://www.youtube-nocookie.com/embed/DflSI5D-J9M" title="Galactic Disharmony trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<div class="gap" style="height:5vmin;"></div>
+
+			<a href="Images/InUnityDisharmony.png"><img src="Images/InUnityDisharmony.png" alt="Galactic Disharmony" class="image"></a>
+			<a href="Images/InUnityDisharmony2.png"><img src="Images/InUnityDisharmony2.png" alt="Galactic Disharmony" class="image"></a>
+			<a href="Images/InUnityDisharmony3.png"><img src="Images/InUnityDisharmony3.png" alt="Galactic Disharmony" class="image"></a>
+
+		</div>
+
+		<div class="gap"></div>
+	</div>
+
+	<div id="Modal_Skimmerz" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h3>SKIMMERZ (2017)</h3>
+			<a href="https://store.steampowered.com/app/717000/SKIMMERZ/"><button class ="button" style="margin-left:37.5%; width:25%; height:25%;">View Steam store page</button></a>
+			<p>SKIMMERZ was the first game I developed. For this game as well as all of the programming for the gameplay I also created all of the Art assets and textures in Blender.</p>
+			<p>The gameplay focuses on singleplayer arena combat with vehicles called Skimmerz, winning consecutive matches would unlock additional Skimmerz with each having unique weapons and abilities.</p>
+			<iframe width="100%" height="320px" src="https://www.youtube-nocookie.com/embed/TofeECNWvCA" title="Skimmerz trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						
+			<div class="gap" style="height:5vmin;"></div>
+
+			<a href="Images/Skimmerz1.jpg"><img src="Images/Skimmerz1.jpg" alt="Skimmerz" class="image"></a>
+			<a href="Images/Skimmerz2.jpg"><img src="Images/Skimmerz2.jpg" alt="Skimmerz" class="image"></a>
+			<a href="Images/Skimmerz3.jpg"><img src="Images/Skimmerz3.jpg" alt="Skimmerz" class="image"></a>
+
+		</div>
+
+	</div>
+
+	<div id="Modal_Naught" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h3>Escape-O-Naught (2021)</h3>
+			<a href="https://harrisonwent.itch.io/monk-o-naught"><button class ="button" style="margin-left:37.5%; width:25%; height:25%;">View Itch.IO store page</button></a>
+			<p>For this game I implemented all of the gameplay features in Unity as well as creating the 3D Art assets in Blender. This was a small group project with one other team member who designed the levels and music as part of our course at University.</p>
+			<p>Escape-O-Naught is a short and easy 3D puzzle platformer. The gameplay revolves around placing different block types to create a path for the Cosmonaught to travel along to get to the escape door.</p>
+			<iframe width="100%" height="320" src="https://www.youtube-nocookie.com/embed/VPIKpWa3Tj4" title="Escape-O-Naught trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						
+			<div class="gap" style="height:5vmin;"></div>
+
+			<a href="Images/Escape-o-naught 1.png"><img src="Images/Escape-o-naught 1.png" alt="Escape-O-Naught" class="image"></a>
+			<a href="Images/Escape-o-naught 2.png"><img src="Images/Escape-o-naught 2.png" alt="Escape-O-Naught" class="image"></a>
+			<a href="Images/Escape-o-naught 3.png"><img src="Images/Escape-o-naught 3.png" alt="Escape-O-Naught" class="image"></a>
+
+		</div>
+
+	</div>
+
+	<div id="Modal_Duplipoint" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h3>Duplipoint (2019)</h3>
+			<a href=""><button class ="button" style="margin-left:37.5%; width:25%; height:25%;">View Play store page</button></a>
+			<p>.</p>
+			<p>.</p>
+			<iframe width="100%" height="320" src="https://www.youtube-nocookie.com/embed/a9FqlLL4EYs" title="Duplipoint trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>						
+			
+			<div class="gap" style="height:5vmin;"></div>
+			<a href="Images/Duplipoint1.png"><img src="Images/Duplipoint1.png" alt="Duplipoint" class="image" style="width:18%"></a>
+			<a href="Images/Duplipoint2.png"><img src="Images/Duplipoint2.png" alt="Duplipoint" class="image" style="width:18%"></a>
+			<a href="Images/Duplipoint3.gif"><img src="Images/Duplipoint3.gif" alt="Duplipoint" class="image" style="width:18%"></a>
+		</div>
+
+	</div>
+
+	<script>
+		//Current modal
+		var modal;
+
+		// Get the button that opens the modal
+		var btn_Disharmony = document.getElementById("myBtn_Disharmony");
+		// When the user clicks the button, open the modal
+		btn_Disharmony.onclick = function () {
+			modal = document.getElementById("Modal_GalacticDisharmony");
+			modal.style.display = "block";
+		}
+
+		var btn_Skimmerz = document.getElementById("myBtn_Skimmerz");
+		btn_Skimmerz.onclick = function () {
+			modal = document.getElementById("Modal_Skimmerz");
+			modal.style.display = "block";
+		}
+
+		var btn_Naught = document.getElementById("myBtn_Naught");
+		btn_Naught.onclick = function () {
+			modal = document.getElementById("Modal_Naught");
+			modal.style.display = "block";
+		}
+
+		var btn_Duplipoint = document.getElementById("myBtn_Duplipoint");
+		btn_Duplipoint.onclick = function () {
+			modal = document.getElementById("Modal_Duplipoint");
+			modal.style.display = "block";
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+
+	</script>
+
+	<footer>Website by Harrison Went</footer>
+
+</body>
+
+
+</html>

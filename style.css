@@ -67,6 +67,7 @@ h1 {
 h2 {
 	font-size: 1.5vmin;
 	text-align:left;
+	margin-left:0.5vmin;
 	min-height:15vmin;
 }
 
@@ -134,10 +135,10 @@ footer {
 .modal-content {
 	background-color: #FeFeFe;
 	margin: auto;
-	padding: 20px;
+	padding: 1vmin;
 	border: 1px solid #888;
 	max-width: 900px;
-	width: 80%;
+	width: 90%;
 
 }
 
@@ -173,9 +174,14 @@ footer {
 	}
 
 .image {
-	width: 32%;
+	width: 18%;
 	margin: auto;
 }
 	.image:hover {
 		transform: scale(1.2);
 	}
+
+/* Hide the images by default */
+.mySlides {
+	display: none;
+}
